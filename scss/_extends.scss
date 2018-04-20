@@ -1,0 +1,64 @@
+
+// Text underline
+%underline {
+  width: 150px;
+  border: 2px solid $dark-brown;
+  @include bp(tablet) {
+    width: 100px;
+    @include bp(mobile) {
+      width: 75px;
+    }
+  }
+}
+
+// Text underline left aligned
+.underline--left {
+  @extend %underline;
+  margin-left: 0;
+}
+
+// Text underline right aligned
+.underline--right {
+  @extend %underline;
+  margin-right: 0;
+}
+
+// Text underline center aligned
+.underline--center {
+  @extend %underline;
+  margin-right: 0 auto;
+}
+
+// Normal section settings
+%normal-section {
+  position: relative;
+  max-width: 1020px;
+  width: 90%;
+  margin: 100px auto;
+  display: flex;
+}
+
+// Makes a section full width
+%full-width {
+  width: 100%;
+  min-width: 100%;
+}
+
+// Standard button template
+%btn {
+  background: white;
+  padding: 13px 40px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: .5s;
+  &:hover {
+    background: $light-grey;
+  }
+}
+
+%h3-brown {
+  color: $small-heading;
+  font-weight: 400;
+  margin: 10px 0 20px;
+  text-transform: uppercase;
+}

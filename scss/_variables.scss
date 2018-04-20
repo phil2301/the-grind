@@ -1,0 +1,38 @@
+// Font Families
+$base__font-size    :   18px;
+$base__line         :   24px;
+$font-family--primary:   "Courier", sans-serif;
+
+// Descriptive Colors
+$flamingo           : #EA5151;
+$pearl-bush         : #D9C9BE;
+$dark-wood          : #8D5E44;
+$metallic-bronze    : #56473C;
+$melanzane          : #221C1F;
+$light-grey         : #F9F9F9;
+
+// Color Usage
+$small-heading      :   $flamingo;
+$brown-section-bg   :   $pearl-bush;
+$dark-brown         :   $dark-wood;
+$paragraph-color    :   $metallic-bronze;
+$heading-color      :   $melanzane;
+
+// UI Colors
+$ui-colors: (
+        default: $light-grey,
+);
+
+// Color Palette modifier
+$palette: (
+        grey: (
+                lighten: lighten($light-grey, 8%),
+                base: $light-grey,
+                darken: darken($light-grey, 8%)
+        ),
+        black: (
+                lighten: lighten($heading-color, 8%),
+                base: $heading-color,
+                darken: darken($heading-color, 8%)
+        )
+);

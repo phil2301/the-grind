@@ -1,0 +1,23 @@
+.instagram {
+  flex-direction: column;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  &__image-container {
+    display: flex;
+    justify-content: space-between;
+    @include bp(mobile) {
+      flex-wrap: wrap;
+    }
+  }
+  &__image-item {
+    flex-basis: 24%;
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+}

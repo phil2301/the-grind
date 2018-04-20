@@ -1,0 +1,67 @@
+// Fonts
+@import url("https://use.typekit.net/btp6lwh.css");
+
+h1, h2, h3 {
+    margin: 0;
+    font-family: "madre-script", sans-serif;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 120px;
+    font-style: italic;
+}
+
+h2 {
+    font-size: 60px;
+    color: $heading-color;
+    margin-bottom: 10px;
+    @include bp(tablet) {
+        font-size: 45px;
+        @include bp(mobile) {
+            font-size: 35px;
+        }
+    }
+}
+
+h3 {
+    font-family: "Proxima Nova", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    @include bp(tablet) {
+        font-size: 22px;
+        @include bp(mobile) {
+            font-size: 20px;
+        }
+    }
+}
+
+a {
+    font-family: "Proxima Nova", sans-serif;
+    text-decoration: none;
+    color: $paragraph-color;
+}
+
+p {
+    color: $paragraph-color;
+}
+
+//General settings
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: $base__font-size;
+    font-family: $font-family--primary;
+    text-decoration: none;
+    list-style: none;
+    background-color: $light-grey;
+    transition: .5s;
+}
+
+section {
+    @extend %normal-section;
+}

@@ -1,0 +1,13 @@
+.full-width-image {
+    @extend %full-width;
+    @include bg-img('image-3.png');
+    @include overlay($dark-brown, 0.5);
+    height: 500px;
+
+    @include bp(tablet) {
+        height: 200px;
+    }
+    @include bp(mobile) {
+        display: none;
+    }
+}

@@ -1,0 +1,42 @@
+.location {
+  flex-direction: row;
+  @include bp(tablet) {
+    flex-direction: column;
+  }
+  &__map {
+    width: 100%;
+    flex: 1 0 40%;
+    @include bg-img("kort.png");
+    min-height: 300px;
+  }
+  &__description {
+    text-align: right;
+    padding: 50px;
+    background-color: $brown-section-bg;
+    @include bp(tablet) {
+      text-align: left;
+    }
+
+    hr {
+      margin-left: 0;
+      width: 200px;
+      @include bp(mobile) {
+        width: 100px;
+        margin: 0 auto;
+      }
+    }
+
+    h3, h2 {
+      @include bp(mobile) {
+        text-align: center;
+      }
+    }
+
+    &--transparent {
+      opacity: .3;
+      @include bp(mobile) {
+        text-align: center;
+      }
+    }
+  }
+}

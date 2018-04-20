@@ -1,0 +1,54 @@
+.gallery {
+  flex-direction: row;
+  height: 500px;
+  @include bp(tablet) {
+    height: 329px;
+    @include bp(mobile) {
+      flex-wrap: wrap;
+      height: 500px;
+    }
+  }
+
+  &__primary {
+    width: 50%;
+    @include bg-img('image-4.png');
+    border-radius: 10px 0 0 10px;
+    @include bp(mobile) {
+      width: 100%;
+    }
+  }
+
+  &__smaller {
+
+    &-wrapper {
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      @include bp(mobile) {
+        width: 100%;
+      }
+    }
+
+    @for $i from 1 through 4 {
+      &-item-#{$i} {
+        @include bg-img("image-" + ($i + 4) + ".png");
+        width: calc(50% - 10px);
+        height: calc(50% - 5px);
+        @include bp(mobile) {
+          height: 60%;
+        }
+        margin-left: 10px;
+        @if $i <= 2 {
+          margin-bottom: 10px;
+          @include bp(mobile) {
+            margin-top: 20px;
+          }
+        }
+        @if $i == 2 or $i == 4 {
+          border-radius: 0 10px 10px 0;
+        }
+      }
+    }
+  }
+}

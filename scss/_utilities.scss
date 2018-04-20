@@ -1,0 +1,66 @@
+//Breakpoints
+@mixin bp($bp) {
+    @if $bp == desktop {
+        @media (min-width: 981px) { @content; }
+    }
+    @else if $bp == tablet {
+        @media (max-width: 980px) { @content; }
+    }
+    @else if $bp == mobile {
+        @media (max-width: 479px ) { @content; }
+    }
+}
+
+// Background image
+@mixin bg-img($url, $repeat: no-repeat, $size: cover, $att: scroll, $position: center center) {
+    background-image: url("./img/" + $url);
+    background-repeat: $repeat;
+    background-size: $size;
+    background-attachment: $att;
+    background-position: center center;
+    @content;
+}
+
+// Pseudo element ::before or ::after
+@mixin ba($top: 0, $left: 0, $right: 0, $bottom: 0, $height: 100%, $width: 100%, $z-index: 0) {
+    content: "";
+    position: absolute;
+    top: $top;
+    left: $left;
+    bottom: $bottom;
+    right: $right;
+    height: $height;
+    width: $width;
+    z-index: $z-index;
+    @content;
+}
+
+// Background overlay
+@mixin overlay($bgColor: blue, $bgOpacity: 1, $ba: before) {
+    position: relative;
+    z-index: 1;
+
+    &::#{$ba} {
+        @include ba();
+        background-color: rgba($bgColor, $bgOpacity);
+        @content;
+    }
+}
+
+// BEM Selectors
+@mixin e($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+@mixin m($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+// Call the color palette modifiers
+@function palette($palette, $shade: 'base') {
+  @return map-get(map-get($palettes, $palette), $shade);
+}

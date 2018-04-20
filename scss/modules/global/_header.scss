@@ -1,0 +1,25 @@
+nav.primary-navigation {
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    ul {
+        margin: 0 auto;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+
+        li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: .5s;
+            &:hover {
+                text-decoration: underline;
+            }
+            @include bp(mobile) {
+                padding: 10px 10px;
+            }
+        }
+    }
+}
