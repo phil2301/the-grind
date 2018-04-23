@@ -2,7 +2,8 @@
 // Text underline
 %underline {
   width: 150px;
-  border: 2px solid $dark-brown;
+  border: 2px solid $paragraph-color;
+  margin: 15px auto 25px;
   @include bp(tablet) {
     width: 100px;
     @include bp(mobile) {
@@ -32,7 +33,7 @@
 // Normal section settings
 %normal-section {
   position: relative;
-  max-width: 1020px;
+  max-width: $max-content-width;
   width: 90%;
   margin: 100px auto;
   display: flex;

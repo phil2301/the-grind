@@ -6,6 +6,9 @@
   }
 
   h3 {
+    margin: 35px 0;
+    font-weight: 700;
+    letter-spacing: 2px;
     @extend %h3-brown;
     @include bp(tablet) {
       width: 100%;
@@ -31,6 +34,19 @@
   }
 
   &__list {
+    &:not(:last-child) {
+      margin-right: 75px;
+      @include bp(tablet) {
+        margin-right: auto;
+      }
+    }
+    &-item-wrapper {
+      margin-bottom: 50px;
+      @include bp(tablet) {
+        width: 50%;
+        padding: 0 10px;
+      }
+    }
     @include bp(tablet) {
       @include bp(mobile) {
         margin: auto 20px;
@@ -40,14 +56,15 @@
       justify-content: space-between;
 
       &-item-wrapper {
-        width: calc(50% - 5px);
         @include bp(mobile) {
           width: 100%;
         }
       }
     }
   }
-
+  &__list-price {
+    font-weight: 700;
+  }
   p + &__list-price {
     margin: 20px 0;
   }

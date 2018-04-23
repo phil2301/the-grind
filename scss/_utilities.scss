@@ -59,8 +59,3 @@
         @content;
     }
 }
-
-// Call the color palette modifiers
-@function palette($palette, $shade: 'base') {
-  @return map-get(map-get($palettes, $palette), $shade);
-}

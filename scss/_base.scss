@@ -17,9 +17,9 @@ h2 {
     color: $heading-color;
     margin-bottom: 10px;
     @include bp(tablet) {
-        font-size: 45px;
+        font-size: 50px;
         @include bp(mobile) {
-            font-size: 35px;
+            font-size: 40px;
         }
     }
 }
@@ -37,7 +37,7 @@ h3 {
 }
 
 a {
-    font-family: "Proxima Nova", sans-serif;
+    font-family: $primary-link-font-family;
     text-decoration: none;
     color: $paragraph-color;
 }

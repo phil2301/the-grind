@@ -1,18 +1,20 @@
 .gallery {
   flex-direction: row;
-  height: 500px;
-  @include bp(tablet) {
-    height: 329px;
-    @include bp(mobile) {
-      flex-wrap: wrap;
-      height: 500px;
-    }
+  @include bp(mobile) {
+    flex-wrap: wrap;
   }
 
   &__primary {
     width: 50%;
-    @include bg-img('image-4.png');
-    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      border-radius: 10px 0 0 10px;
+      @include bp(mobile) {
+        border-radius: 10px 10px 0 0;
+      }
+    }
     @include bp(mobile) {
       width: 100%;
     }
@@ -21,10 +23,12 @@
   &__smaller {
 
     &-wrapper {
-      width: 50%;
+      width: calc(50% - 10px);
+      margin-left: auto;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      justify-content: space-between;
       @include bp(mobile) {
         width: 100%;
       }
@@ -32,21 +36,49 @@
 
     @for $i from 1 through 4 {
       &-item-#{$i} {
-        @include bg-img("image-" + ($i + 4) + ".png");
-        width: calc(50% - 10px);
+        position: relative;
+
+        width: calc(50% - 5px);
         height: calc(50% - 5px);
+
         @include bp(mobile) {
-          height: 60%;
+          height: auto;
         }
-        margin-left: 10px;
-        @if $i <= 2 {
-          margin-bottom: 10px;
-          @include bp(mobile) {
-            margin-top: 20px;
+
+        img {
+          position: relative;
+          width: 100%;
+        }
+
+        @include bp(mobile) {
+          @if $i == 3 {
+            img {
+              border-bottom-left-radius: 10px;
+            }
+          } @else if $i == 4 {
+            img {
+              border-bottom-right-radius: 10px;
+            }
           }
         }
+
+        @if $i <= 2 {
+          margin-bottom: 5px;
+        }
+
         @if $i == 2 or $i == 4 {
           border-radius: 0 10px 10px 0;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: calc(100% - 8px);
+          background-color: rgba($dark-brown, 0.5);
+          z-index: 3;
         }
       }
     }

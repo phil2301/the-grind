@@ -1,19 +1,29 @@
 .about {
-    margin-top: 50px;
+    margin-top: 90px;
     @include bp(mobile) {
         flex-direction: column;
     }
 
+    hr {
+        border: 2px solid $dark-brown;
+        @include bp(tablet) {
+            width: 250px;
+        }
+    }
+
     &__text {
-        width: 65%;
-        margin-right: 5%;
+        width: 50%;
         @include bp(mobile) {
             width: 100%;
             margin-right: 0;
         }
+        p {
+            margin-top: 30px;
+        }
     }
     &__image {
-        width: 35%;
+        width: 40%;
+        margin-left: auto;
         img {
             width: 100%;
             border-radius: 10px;

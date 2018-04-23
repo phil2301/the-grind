@@ -2,8 +2,10 @@ nav.primary-navigation {
     position: absolute;
     width: 100%;
     z-index: 3;
+    text-transform: uppercase;
     ul {
         margin: 0 auto;
+        padding-left: 0;
         list-style: none;
         display: flex;
         justify-content: center;
@@ -19,6 +21,7 @@ nav.primary-navigation {
             }
             @include bp(mobile) {
                 padding: 10px 10px;
+                font-size: 16px;
             }
         }
     }

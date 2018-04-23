@@ -1,28 +1,68 @@
 .location {
   flex-direction: row;
+  overflow: hidden;
+  height: 500px;
+
   @include bp(tablet) {
     flex-direction: column;
+    height: auto;
   }
+
   &__map {
-    width: 100%;
-    flex: 1 0 40%;
-    @include bg-img("kort.png");
-    min-height: 300px;
+    flex: 1 0 45%;
+    width: 35%;
+
+    @include bp(tablet) {
+      height: 300px;
+      width: 100%;
+    }
+    @include bp(mobile) {
+      height: 100%;
+      margin-bottom: -10px;
+    }
+
+    img {
+      height: 100%;
+
+      @include bp(tablet) {
+        margin-top: -25%;
+        height: auto;
+        width: 100%;
+      }
+      @include bp(mobile) {
+        margin-top: 0;
+      }
+    }
   }
+
   &__description {
     text-align: right;
     padding: 50px;
+    padding-left: 100px;
     background-color: $brown-section-bg;
-    @include bp(tablet) {
-      text-align: left;
+
+    h3 {
+      text-transform: uppercase;
+      font-size: 22px;
+      margin-top: 20px;
+      @include bp(tablet) {
+        margin-top: 25px;
+      }
     }
 
-    hr {
-      margin-left: 0;
-      width: 200px;
-      @include bp(mobile) {
-        width: 100px;
-        margin: 0 auto;
+    @include bp(tablet) {
+      text-align: left;
+      padding-left: 50px;
+    }
+
+    @include bp(tablet) {
+      hr {
+        margin-left: 0;
+        width: 200px;
+        @include bp(mobile) {
+          width: 100px;
+          margin: 0 auto;
+        }
       }
     }
 

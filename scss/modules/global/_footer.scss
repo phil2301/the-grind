@@ -1,6 +1,20 @@
 footer {
   @extend %full-width;
   background: #fff;
+  p {
+    line-height: 1.25;
+    @include bp(tablet) {
+      font-size: 15px;
+    }
+  }
+  .copyright, .footer-navigation {
+    text-transform: uppercase;
+  }
+  hr.underline--center, hr.underline--right{
+    width: 50px;
+    border: 1px solid $paragraph-color;
+    background: $paragraph-color;
+  }
 
   @include bp(mobile) {
     hr.underline--right {
@@ -76,6 +90,7 @@ footer {
           flex-direction: row;
           justify-content: flex-end;
           margin: 0 0;
+          padding-left: 0;
           list-style: none;
 
           li {

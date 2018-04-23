@@ -8,12 +8,19 @@
   &__image-container {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
+
     @include bp(mobile) {
       flex-wrap: wrap;
     }
   }
   &__image-item {
     flex-basis: 24%;
+
+    @include bp(mobile) {
+      flex-basis: calc(50% - 5px);
+      margin-bottom: 5px;
+    }
 
     img {
       width: 100%;
